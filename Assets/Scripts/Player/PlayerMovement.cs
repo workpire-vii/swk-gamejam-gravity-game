@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private ParticleSystem snow;
     [SerializeField] private TextMeshProUGUI scoreSpeed;
+    [SerializeField] private TextMeshProUGUI thrust;
 
 
     [Header("SFX Stuff")]
@@ -21,9 +22,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip extinguisherEnd;
     [SerializeField] private AudioSource audioSourceLoop;
     private AudioSource audioSourceStart;
-    //private double duration;
-    //private double goalTime;
-
 
 
     // Variable to access internal stuff
@@ -52,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
     {
         speed = rb.velocity.magnitude;
         scoreSpeed.text = speed.ToString();
+
+        thrust.text = thrustSpeed.ToString();
     }
     private void momentumHandling()
     {
