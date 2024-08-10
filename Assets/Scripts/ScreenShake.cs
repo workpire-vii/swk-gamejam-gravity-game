@@ -6,6 +6,7 @@ public class ScreenShake : MonoBehaviour
 {
     public bool start = false;
     public float duration = 1f;
+    public Animator hurtVignette;
     [Tooltip("The lower the less shakier")]
     public float shakiness = 0.1f;
 
@@ -14,6 +15,7 @@ public class ScreenShake : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             start = true;
+            hurtVignette.Play("Hurt");
         }
 
         if (start)

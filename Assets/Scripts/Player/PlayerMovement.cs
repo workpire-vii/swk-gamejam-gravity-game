@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void momentumHandling()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetMouseButton(0))
         {
             emission.enabled = true;
             snow.Play();
@@ -71,13 +71,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void InputAudio()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetMouseButtonDown(0))
         {
             audioSourceStart.clip = extinguisherStart;
             audioSourceStart.Play();
             audioSourceLoop.PlayScheduled(extinguisherStart.length);
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        else if (Input.GetMouseButtonUp(0))
         {
             audioSourceStart.clip = extinguisherEnd;
             audioSourceStart.Play();
