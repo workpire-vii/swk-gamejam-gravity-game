@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         momentumHandling();
+        limit();
     }
 
     private void updateScore()
@@ -83,5 +84,13 @@ public class PlayerMovement : MonoBehaviour
             audioSourceStart.Play();
             audioSourceLoop.Stop();
         }
+    }
+
+    private void limit()
+    {
+        if (transform.position.x > 150)
+            transform.position = new Vector3(150, transform.position.y, transform.position.z);
+        if (transform.position.y > 150)
+            transform.position = new Vector3 (transform.position.x, 150, transform.position.z);
     }
 }
