@@ -7,31 +7,44 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
     public float thrustSpeed = 1;
+
+    [NonSerialized] public float speed;
 
     [SerializeField] private ParticleSystem snow;
     [SerializeField] private TextMeshProUGUI scoreSpeed;
 
 
+    [Header("SFX Stuff")]
+    [SerializeField] private AudioClip extinguisherStart;
+    [SerializeField] private AudioClip extinguisherLoop;
+    [SerializeField] private AudioClip extinguisherEnd;
+    [SerializeField] private AudioSource audioSourceLoop;
+    private AudioSource audioSourceStart;
+    //private double duration;
+    //private double goalTime;
+
+
+
+    // Variable to access internal stuff
+    private Rigidbody2D rb;
     ParticleSystem.EmissionModule emission;
-    [NonSerialized] public float speed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        audioSourceStart = GetComponent<AudioSource>();
         emission = snow.emission;
     }
 
     void Update()
     {
-        
+        updateScore();
+        InputAudio();
     }
 
     private void FixedUpdate()
     {
-        updateScore();
         momentumHandling();
     }
 
@@ -53,6 +66,22 @@ public class PlayerMovement : MonoBehaviour
         {
             emission.enabled = false;
             snow.Stop();
+        }
+    }
+
+    private void InputAudio()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            audioSourceStart.clip = extinguisherStart;
+            audioSourceStart.Play();
+            audioSourceLoop.PlayScheduled(extinguisherStart.length);
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            audioSourceStart.clip = extinguisherEnd;
+            audioSourceStart.Play();
+            audioSourceLoop.Stop();
         }
     }
 }
