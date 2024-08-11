@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3699290219367238177}
   - component: {fileID: 6463387948312883842}
   - component: {fileID: 3985070063182734289}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Debree 3
   m_TagString: Debree
   m_Icon: {fileID: 0}

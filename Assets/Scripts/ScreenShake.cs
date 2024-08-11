@@ -15,7 +15,6 @@ public class ScreenShake : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             start = true;
-            hurtVignette.Play("Hurt");
         }
 
         if (start)
@@ -27,6 +26,7 @@ public class ScreenShake : MonoBehaviour
     IEnumerator Shaking()
     {
         float elapsedTime = 0f;
+        hurtVignette.Play("Hurt");
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;

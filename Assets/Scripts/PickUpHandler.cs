@@ -6,6 +6,12 @@ public class PickUpHandler : MonoBehaviour
 {
     [SerializeField] private float getSpeed;
 
+    private void Update()
+    {
+        Vector3 vecz = Vector3.zero;
+        transform.position = new Vector3(transform.position.x, transform.position.y, vecz.z);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

@@ -93,4 +93,10 @@ public class PlayerMovement : MonoBehaviour
         if (transform.position.y > 150)
             transform.position = new Vector3 (transform.position.x, 150, transform.position.z);
     }
+
+    [SerializeField] private ScreenShake screenShake;
+    public void Hurt()
+    {
+        screenShake.start = true;
+    }
 }

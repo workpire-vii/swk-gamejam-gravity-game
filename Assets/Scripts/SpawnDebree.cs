@@ -8,6 +8,7 @@ public class SpawnDebree : MonoBehaviour
     [SerializeField] private bool spawn = true;
     [SerializeField] private GameObject[] debrees;
     [SerializeField] private Collider2D[] collisions;
+    [SerializeField] private float spawnPerSec = 0.5f;
 
     void Start()
     {
@@ -15,8 +16,8 @@ public class SpawnDebree : MonoBehaviour
     }
     private void spawnDebree()
     {
-        int i = Random.Range(0, debrees.Length - 1);
-        int j = Random.Range(0, collisions.Length - 1);
+        int i = Random.Range(0, debrees.Length);
+        int j = Random.Range(0, collisions.Length);
         Instantiate(debrees[i], RandomPointInBounds(collisions[j].bounds), Quaternion.identity, transform);
         timerDebree();
     }
@@ -34,7 +35,7 @@ public class SpawnDebree : MonoBehaviour
         while (spawn)
         {   
             spawnDebree();
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(spawnPerSec);
         }
     }
 }

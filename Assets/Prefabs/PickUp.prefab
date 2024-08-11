@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3996629540383041580}
   - component: {fileID: 3118591036346548027}
   - component: {fileID: 5321718443131193317}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: PickUp
   m_TagString: Debree
   m_Icon: {fileID: 0}
@@ -28,9 +28,9 @@ Transform:
   m_GameObject: {fileID: 6567168297328477728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6, y: -0.44, z: 0.044147257}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 1.6, y: -0.44, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 621947701541941565}
   m_Father: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621947701541941565}
   - component: {fileID: 2707878850356013253}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 7322140553874984293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.044147257}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []

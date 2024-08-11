@@ -35,6 +35,7 @@ public class BounceHandlnig : MonoBehaviour
                 }
                 if (badRock)
                 {
+                    collision.gameObject.transform.parent.GetComponent<PlayerMovement>().Hurt();
                     collision.gameObject.transform.parent.GetComponent<PlayerMovement>().thrustSpeed -= minusThrust;
                 }
             }

@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class MenuHandling : MonoBehaviour
 {
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
 
     public void OnStart()
     {
@@ -24,6 +28,11 @@ public class MenuHandling : MonoBehaviour
     public void OnTutorial()
     {
         return;
+    }
+
+    public void OnPause()
+    {
+        Time.timeScale = 0;
     }
 
     public void OnEnd()
